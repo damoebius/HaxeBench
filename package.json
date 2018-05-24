@@ -1,0 +1,21 @@
+{
+  "name": "bench",
+  "version": "1.0.0",
+  "description": "bench javascript output",
+  "main": "index.js",
+  "author": "damoebius",
+  "license": "ISC",
+  "scripts": {
+    "build": "haxe build.hxml",
+    "postinstall": "haxelib install all --always"
+  },
+  "dependencies": {
+    "haxe": "5.0.9"
+  },
+  "haxeDependencies": {
+    "haxe": "3.4.7",
+    "haxelib": "3.3.0",
+    "neko": "2.2.0"
+  },
+  "devDependencies": {}
+}

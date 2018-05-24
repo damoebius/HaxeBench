@@ -1,0 +1,7 @@
+-cp src
+
+-dce full
+--times
+
+-js www/js/haxe.js
+-main haxe.Main
