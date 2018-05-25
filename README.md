@@ -19,9 +19,9 @@ npm run build
 
 To run the benchmark open one of this urls in your browser :
 
-- haxe : http://localhost/spihaxejs.html
-- typescript : http://localhost/spitsjs.html
-- dart : http://localhost/spidart.html
+- haxe : https://damoebius.github.io/HaxeBench/www/spihaxejs.html
+- typescript : https://damoebius.github.io/HaxeBench/www/spitsjs.html
+- dart : https://damoebius.github.io/HaxeBench/www/spidart.html
 
 
 # results
