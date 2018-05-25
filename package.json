@@ -9,6 +9,7 @@
     "build": "npm run build:haxe && npm run build:ts",
     "build:haxe": "haxe build.hxml",
     "build:ts": "tsc --diagnostics",
+    "build:dart":"dart2js --no-source-maps -v -o www/js/dart.js src/dart/spi.dart",
     "postinstall": "haxelib install all --always"
   },
   "dependencies": {

@@ -35,6 +35,14 @@
       "title": "graph 3",
       "type": "column",
       "valueField": "dart"
+    },
+    {
+      "balloonText": "[[title]] of [[category]]:[[value]]",
+      "fillAlphas": 0.9,
+      "id": "AmGraph-4",
+      "title": "dart2",
+      "type": "column",
+      "valueField": "dart2"
     }
   ],
   "guides": [],
@@ -52,19 +60,22 @@
       "category": "compilation time",
       "typescript": "1.97",
       "haxe": "0.281",
-      "dart": "5.56"
+      "dart": "5.56",
+      "dart2": "4.06"
     },
     {
       "category": "run time",
       "typescript": "8.94",
       "haxe": "7.97",
-      "dart": "11.418"
+      "dart": "11.418",
+      "dart2": "11.411"
     },
     {
       "category": "size",
       "typescript": "0.12",
       "haxe": "0.27",
-      "dart": "3.44"
+      "dart": "3.44",
+      "dart2": "2.64"
     }
   ]
 }
