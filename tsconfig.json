@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "outFile": "./www/js/ts.js",
+    "rootDir": "./src/",
+    "sourceMap": false
+  }
+}

@@ -6,11 +6,14 @@
   "author": "damoebius",
   "license": "ISC",
   "scripts": {
-    "build": "haxe build.hxml",
+    "build": "npm run build:haxe && npm run build:ts",
+    "build:haxe": "haxe build.hxml",
+    "build:ts": "tsc --diagnostics",
     "postinstall": "haxelib install all --always"
   },
   "dependencies": {
-    "haxe": "5.0.9"
+    "haxe": "5.0.9",
+    "typescript": "2.8.3"
   },
   "haxeDependencies": {
     "haxe": "3.4.7",
