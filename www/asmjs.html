@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<body  bgcolor="#F0F0FF">
+
+<div id="txt">Loading JS...</div>
+<div id="starter">
+Number of times to decompress: 
+<input size="5" value="10" autocomplete="off" id="N">
+<input type="submit" value="Go" id="btn">
+</div>
+<p>
+<div id="main"></div>
+
+
+  <script src="code.js"></script>
+  <script>
+  var X = 960; var Y = 540;
+  var txt = window.document.getElementById("txt");
+	txt.innerHTML = "loading image...";
+	var r = new XMLHttpRequest();	
+	r.onload = function(x) {    
+		var buf = r.response;
+		txt.innerHTML = "received " + buf.byteLength;
+		var btn = window.document.getElementById("btn");
+		btn.onclick = function(e) {
+			var bytes = new Uint8Array(buf,4);
+			//var sp = new ScreenPressor(960,540);
+			var inp;
+			inp = window.document.getElementById("N");
+			var N = parseInt(inp.value, 10);
+			if(N < 0 || N > 1000) {
+				txt.innerHTML = "You must be joking!";
+				return;
+			}
+			txt.innerHTML = "Decompressing " + N + " times...";
+      var m = window.document.getElementById("main");
+      while(m.lastChild != null) m.removeChild(m.lastChild);
+
+			var timer_id = setInterval(function() {
+        clearInterval(timer_id);
+				//var t0 = new Date().getTime();
+				/*var _g = 0;
+				while(_g < N) {
+					var n = _g++;
+					sp.DecompressI(bytes,dst);
+				}
+				var t1 = haxe.Timer.stamp();*/
+        var pSrc = Module._malloc(bytes.length);
+        var pDst = Module._malloc(X*Y*3);
+        
+        Module.writeArrayToMemory(bytes, pSrc);
+        var sp = new Module.ScreenPressor(X, Y);
+        var t0 = new Date().getTime();
+        
+        var n = 0;
+        while(n++ < N)
+          sp.DecompressFrame(pSrc, pDst);
+        
+        var t1 = new Date().getTime();
+				txt.innerHTML += " t=" + (t1-t0);
+				
+        var c;
+        var _this = window.document;
+        c = _this.createElement("canvas");
+        c.width = X;
+        c.height = Y;
+        m.appendChild(c);
+        var imagedata = c.getContext("2d").getImageData(0,0,X,Y);
+        var data = imagedata.data;
+        var picbytes = Module.HEAPU8.subarray(pDst, pDst+X*Y*3);
+        var _g1 = 0;
+        while(_g1 < 518400) {
+          var i = _g1++;
+          data[i * 4] = picbytes[i * 3];
+          data[i * 4 + 1] = picbytes[i * 3 + 1];
+          data[i * 4 + 2] = picbytes[i * 3 + 2];
+          data[i * 4 + 3] = 255;
+        }
+        c.getContext("2d").putImageData(imagedata,0,0);        
+        Module._free(pDst);
+        Module._free(pSrc);
+        sp.delete();
+			},20);
+		};
+	};
+	r.open("GET","blow.spi",true);
+  r.responseType = "arraybuffer";
+	r.send();
+  </script>
+</body>
+</html>
