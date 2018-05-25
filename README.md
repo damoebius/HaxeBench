@@ -28,5 +28,5 @@ on Chrome 66, i5-5300U CPU @ 2.30GHz
 | haxe  | 0.281s  | 7.97s  | 27ko  | 13ko  |
 | typescript  | 1.97s  | 8.94s  | 12ko  | 7ko |
 
-
+![result](/docs/result.png)
 
