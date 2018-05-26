@@ -30,8 +30,8 @@ class Main
 				var bytes = new Uint8Array(buf, 4);			
 				var sp = new ScreenPressor(X, Y);
 				var dst = new Int32Array(X * Y);
-				var inp : InputElement = cast(Browser.document.getElementById("N"), InputElement);
-				var N = Std.parseInt( inp.value );				
+				var inp : InputElement = cast Browser.document.getElementById("N");
+				var N = Std.parseInt( inp.value );
 				if (N < 0 || N > 1000) {
 					txt.innerHTML = "You must be joking!"; return;
 				}
