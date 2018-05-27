@@ -30,10 +30,15 @@ On Chrome 66, i5-5300U CPU @ 2.30GHz
 
 | lang  | compilation time | run time | size | minified size |
 | ------------- | ------------- |------------- |------------- |------------- |
-| Haxe  | 0.281s  | 7.97s  | 27ko  | 13ko  |
-| TypeScript  | 1.97s  | 8.94s  | 12ko  | 7ko |
-| Dart  | 5.56s  | 11.418s  | 344ko  | 136ko |
-| Dart2  | 4.06s  | 11.411s  | 264ko  | 106ko |
+| Haxe  | 0.281s  | 7.97s  | 27KB*  | 13KB  |
+| TypeScript  | 1.97s  | 8.94s  | 12KB  | 7KB |
+| Dart  | 5.56s  | 11.418s  | 344KB  | 136KB |
+| Dart2  | 4.06s  | 11.411s  | 264KB  | 106KB |
+
+\*includes typed arrays polyfills for old browsers.
 
 ![result](/docs/result.png)
-
+- ![#76bee0](https://placehold.it/15/76bee0/000000?text=+) `TypeScript`
+- ![#fdd71a](https://placehold.it/15/fdd71a/000000?text=+) `Haxe`
+- ![#91be71](https://placehold.it/15/91be71/000000?text=+) `Dart`
+- ![#d15a5c](https://placehold.it/15/d15a5c/000000?text=+) `Dart2`
