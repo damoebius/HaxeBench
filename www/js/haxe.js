@@ -45,7 +45,7 @@ haxe_Main.main = function() {
 			var bytes = new Uint8Array(buf,4);
 			var sp = new haxe_ScreenPressor(960,540);
 			var dst = new Int32Array(518400);
-			var inp = js_Boot.__cast(window.document.getElementById("N") , HTMLInputElement);
+			var inp = window.document.getElementById("N");
 			var N = Std.parseInt(inp.value);
 			if(N < 0 || N > 1000) {
 				txt.innerHTML = "You must be joking!";
@@ -987,13 +987,6 @@ js_Boot.__instanceof = function(o,cl) {
 			return true;
 		}
 		return o.__enum__ == cl;
-	}
-};
-js_Boot.__cast = function(o,t) {
-	if(js_Boot.__instanceof(o,t)) {
-		return o;
-	} else {
-		throw new js__$Boot_HaxeError("Cannot cast " + Std.string(o) + " to " + Std.string(t));
 	}
 };
 js_Boot.__nativeClassName = function(o) {
