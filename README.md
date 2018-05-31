@@ -46,4 +46,4 @@ On Chrome 66, i5-5300U CPU @ 2.30GHz
 - ![#fdd71a](https://placehold.it/15/fdd71a/000000?text=+) `Haxe`
 - ![#91be71](https://placehold.it/15/91be71/000000?text=+) `Dart`
 - ![#d15a5c](https://placehold.it/15/d15a5c/000000?text=+) `Dart2`
-- ![#d15a5c](https://placehold.it/15/d15a5c/000000?text=+) `Wasm`
+- ![#D28FB5](https://placehold.it/15/D28FB5/000000?text=+) `Wasm`
