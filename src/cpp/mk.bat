@@ -1,1 +1,1 @@
-em++ --bind -o code.js -O2 code.cpp sub.cpp screencap.cpp -s TOTAL_MEMORY=33554432
+em++ --bind -o code.html -O3 code.cpp sub.cpp screencap.cpp -s WASM=1
