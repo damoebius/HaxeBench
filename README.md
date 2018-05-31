@@ -35,6 +35,8 @@ On Chrome 66, i5-5300U CPU @ 2.30GHz
 | Dart  | 5.56s  | 11.418s  | 344KB  | 136KB |
 | Dart2  | 4.06s  | 11.411s  | 264KB  | 106KB |
 
+15584 vs 17306
+
 \*includes typed arrays polyfills for old browsers.
 
 ![result](/docs/result.png)
