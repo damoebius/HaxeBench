@@ -73,12 +73,20 @@
 			"wasm": "8.74"
 		},
 		{
-			"category": "run time",
+			"category": "chrome run time",
 			"typescript": "8.94",
 			"haxe": "7.97",
 			"dart": "11.418",
 			"dart2": "11.411",
 			"wasm": "7.18"
+		},
+{
+			"category": "firefox run time",
+			"typescript": "8.15",
+			"haxe": "7.18",
+			"dart": "9.241",
+			"dart2": "9.206",
+			"wasm": "5.93"
 		},
 		{
 			"category": "size",
@@ -88,5 +96,6 @@
 			"dart2": "2.64",
 			"wasm": "0.82"
 		}
+		
 	]
 }
