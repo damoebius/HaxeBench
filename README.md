@@ -28,17 +28,18 @@ To run the benchmark open one of this urls in your browser :
 
 # results
 
-On Chrome 66, i5-5300U CPU @ 2.30GHz
+On Chrome 66 and Firefox 59, i5-5300U CPU @ 2.30GHz, 200 passes
 
-| lang  | compilation time | run time | size | minified size |
+| lang  | compilation time | chrome run time | firefox run time | size | minified size |
 | ------------- | ------------- |------------- |------------- |------------- |
-| Haxe  | 0.281s  | 7.97s  | 27KB*  | 13KB  |
-| TypeScript  | 1.97s  | 8.94s  | 12KB  | 7KB |
-| Dart  | 5.56s  | 11.418s  | 344KB  | 136KB |
-| Dart2  | 4.06s  | 11.411s  | 264KB  | 106KB |
-| Wasm  | 8.74s  | 7.176s  | 82KB**  | 69KB |
+| Haxe  | 0.281s  | 7.97s  | 7.58s | 27KB*  | 13KB  |
+| TypeScript  | 1.97s  | 8.94s  | 8.15s | 12KB  | 7KB |
+| Dart  | 5.56s  | 11.418s  | 9.241s |344KB  | 136KB |
+| Dart2  | 4.06s  | 11.411s  | 9.206s |264KB  | 106KB |
+| Wasm  | 8.74s  | 7.176s  | 5.93s | 82KB**  | 69KB |
 
 \*includes typed arrays polyfills for old browsers.
+
 \** wasm 23KB + javascript 59KB
 
 ![result](/docs/result.png)
