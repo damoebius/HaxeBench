@@ -5,3 +5,13 @@
 
 -js www/js/haxe.js
 -main haxe.Main
+
+--next
+
+-cp src
+
+-dce full
+--times
+
+-cpp www/js/haxecpp.js
+-main hxcpp.Main
