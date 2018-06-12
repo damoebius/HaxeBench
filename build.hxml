@@ -13,5 +13,9 @@
 -dce full
 --times
 
+-D EMSCRIPTEN_SDK
+-D HXCPP_LINK_EMSCRIPTEN_EXT=.html
+-D emscripten
+
 -cpp www/js/haxecpp.js
 -main hxcpp.Main
