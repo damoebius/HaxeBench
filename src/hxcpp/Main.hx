@@ -12,10 +12,12 @@ class Main
 {
 	static inline var X = 960;
 	static inline var Y = 540;
+	static var ScreenPressor;
 	
 	static function main() 
 	{
-
+		ScreenPressor = new ScreenPressor(X,Y);
+		trace('hello');
 	}
 	
 }
