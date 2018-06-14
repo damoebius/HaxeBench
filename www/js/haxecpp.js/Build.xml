@@ -40,4 +40,10 @@
 </files>
 <set name="HAXE_OUTPUT" value="Main" />
 <include name="${HXCPP}/build-tool/BuildCommon.xml"/>
+
+<linker id='exe' exe='emcc'>
+	<flag value='-s' />
+	<flag value='WASM=1' />
+</linker>
+
 </xml>
