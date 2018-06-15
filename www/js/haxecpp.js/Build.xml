@@ -2,19 +2,36 @@
 <set name="HXCPP_API_LEVEL" value="331" />
 <files id="haxe">
 <compilerflag value="-Iinclude"/>
+  <file name="src/hxcpp/ScreenPressor.cpp" >
+   <depend name="include/haxe/io/ArrayBufferViewImpl.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/hxcpp/RangeCoder.h"/>
+   <depend name="include/hxcpp/ScreenPressor.h"/>
+  </file>
+  <file name="src/hxcpp/RangeCoder.cpp" >
+   <depend name="include/hxcpp/RangeCoder.h"/>
+  </file>
   <file name="src/hxcpp/Main.cpp" >
+   <depend name="include/haxe/Log.h"/>
    <depend name="include/hxcpp/Main.h"/>
+   <depend name="include/hxcpp/ScreenPressor.h"/>
   </file>
   <file name="src/haxe/io/Bytes.cpp" >
    <depend name="include/haxe/io/Bytes.h"/>
   </file>
   <file name="src/haxe/io/ArrayBufferViewImpl.cpp" >
    <depend name="include/haxe/io/ArrayBufferViewImpl.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+  </file>
+  <file name="src/haxe/Log.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/haxe/Log.h"/>
   </file>
   <file name="src/Std.cpp" >
    <depend name="include/Std.h"/>
   </file>
   <file name="src/__boot__.cpp" >
+   <depend name="include/haxe/Log.h"/>
   </file>
   <file name="src/__files__.cpp" if='HXCPP_DEBUGGER'>
   </file>
@@ -42,6 +59,9 @@
 <include name="${HXCPP}/build-tool/BuildCommon.xml"/>
 
 <linker id='exe' exe='emcc'>
+    <flag value='--bind' />
+    <flag value='-s' />
+    <flag value='TOTAL_MEMORY=33554432' />
 	<flag value='-s' />
 	<flag value='WASM=1' />
 </linker>

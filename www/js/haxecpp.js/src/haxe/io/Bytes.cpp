@@ -5,10 +5,16 @@
 #include <haxe/io/Bytes.h>
 #endif
 
+HX_DEFINE_STACK_FRAME(_hx_pos_bafb5aba549b371d_33_new,"haxe.io.Bytes","new",0x3938d57d,"haxe.io.Bytes.new","/usr/share/haxe/std/haxe/io/Bytes.hx",33,0xb829beee)
+HX_LOCAL_STACK_FRAME(_hx_pos_bafb5aba549b371d_462_alloc,"haxe.io.Bytes","alloc",0x2199ead2,"haxe.io.Bytes.alloc","/usr/share/haxe/std/haxe/io/Bytes.hx",462,0xb829beee)
 namespace haxe{
 namespace io{
 
-void Bytes_obj::__construct() { }
+void Bytes_obj::__construct(int length,::Array< unsigned char > b){
+            	HX_STACKFRAME(&_hx_pos_bafb5aba549b371d_33_new)
+HXLINE(  34)		this->length = length;
+HXLINE(  35)		this->b = b;
+            	}
 
 Dynamic Bytes_obj::__CreateEmpty() { return new Bytes_obj; }
 
@@ -17,7 +23,7 @@ void *Bytes_obj::_hx_vtable = 0;
 Dynamic Bytes_obj::__Create(hx::DynamicArray inArgs)
 {
 	hx::ObjectPtr< Bytes_obj > _hx_result = new Bytes_obj();
-	_hx_result->__construct();
+	_hx_result->__construct(inArgs[0],inArgs[1]);
 	return _hx_result;
 }
 
@@ -25,15 +31,90 @@ bool Bytes_obj::_hx_isInstanceOf(int inClassId) {
 	return inClassId==(int)0x00000001 || inClassId==(int)0x5b931193;
 }
 
+ ::haxe::io::Bytes Bytes_obj::alloc(int length){
+            	HX_GC_STACKFRAME(&_hx_pos_bafb5aba549b371d_462_alloc)
+HXLINE( 472)		::Array< unsigned char > a = ::Array_obj< unsigned char >::__new();
+HXLINE( 473)		if ((length > (int)0)) {
+HXLINE( 473)			_hx_array_set_size_exact(a,length);
+            		}
+HXLINE( 474)		return  ::haxe::io::Bytes_obj::__alloc( HX_CTX ,length,a);
+            	}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC1(Bytes_obj,alloc,return )
+
 
 Bytes_obj::Bytes_obj()
 {
 }
 
+void Bytes_obj::__Mark(HX_MARK_PARAMS)
+{
+	HX_MARK_BEGIN_CLASS(Bytes);
+	HX_MARK_MEMBER_NAME(length,"length");
+	HX_MARK_MEMBER_NAME(b,"b");
+	HX_MARK_END_CLASS();
+}
+
+void Bytes_obj::__Visit(HX_VISIT_PARAMS)
+{
+	HX_VISIT_MEMBER_NAME(length,"length");
+	HX_VISIT_MEMBER_NAME(b,"b");
+}
+
+hx::Val Bytes_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
+{
+	switch(inName.length) {
+	case 1:
+		if (HX_FIELD_EQ(inName,"b") ) { return hx::Val( b ); }
+		break;
+	case 6:
+		if (HX_FIELD_EQ(inName,"length") ) { return hx::Val( length ); }
+	}
+	return super::__Field(inName,inCallProp);
+}
+
+bool Bytes_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx::PropertyAccess inCallProp)
+{
+	switch(inName.length) {
+	case 5:
+		if (HX_FIELD_EQ(inName,"alloc") ) { outValue = alloc_dyn(); return true; }
+	}
+	return false;
+}
+
+hx::Val Bytes_obj::__SetField(const ::String &inName,const hx::Val &inValue,hx::PropertyAccess inCallProp)
+{
+	switch(inName.length) {
+	case 1:
+		if (HX_FIELD_EQ(inName,"b") ) { b=inValue.Cast< ::Array< unsigned char > >(); return inValue; }
+		break;
+	case 6:
+		if (HX_FIELD_EQ(inName,"length") ) { length=inValue.Cast< int >(); return inValue; }
+	}
+	return super::__SetField(inName,inValue,inCallProp);
+}
+
+void Bytes_obj::__GetFields(Array< ::String> &outFields)
+{
+	outFields->push(HX_HCSTRING("length","\xe6","\x94","\x07","\x9f"));
+	outFields->push(HX_HCSTRING("b","\x62","\x00","\x00","\x00"));
+	super::__GetFields(outFields);
+};
+
 #if HXCPP_SCRIPTABLE
-static hx::StorageInfo *Bytes_obj_sMemberStorageInfo = 0;
+static hx::StorageInfo Bytes_obj_sMemberStorageInfo[] = {
+	{hx::fsInt,(int)offsetof(Bytes_obj,length),HX_HCSTRING("length","\xe6","\x94","\x07","\x9f")},
+	{hx::fsObject /*Array< unsigned char >*/ ,(int)offsetof(Bytes_obj,b),HX_HCSTRING("b","\x62","\x00","\x00","\x00")},
+	{ hx::fsUnknown, 0, null()}
+};
 static hx::StaticInfo *Bytes_obj_sStaticStorageInfo = 0;
 #endif
+
+static ::String Bytes_obj_sMemberFields[] = {
+	HX_HCSTRING("length","\xe6","\x94","\x07","\x9f"),
+	HX_HCSTRING("b","\x62","\x00","\x00","\x00"),
+	::String(null()) };
 
 static void Bytes_obj_sMarkStatics(HX_MARK_PARAMS) {
 	HX_MARK_MEMBER_NAME(Bytes_obj::__mClass,"__mClass");
@@ -48,6 +129,11 @@ static void Bytes_obj_sVisitStatics(HX_VISIT_PARAMS) {
 
 hx::Class Bytes_obj::__mClass;
 
+static ::String Bytes_obj_sStaticFields[] = {
+	HX_HCSTRING("alloc","\x75","\xa4","\x93","\x21"),
+	::String(null())
+};
+
 void Bytes_obj::__register()
 {
 	hx::Object *dummy = new Bytes_obj;
@@ -57,11 +143,11 @@ void Bytes_obj::__register()
 	__mClass->mSuper = &super::__SGetClass();
 	__mClass->mConstructEmpty = &__CreateEmpty;
 	__mClass->mConstructArgs = &__Create;
-	__mClass->mGetStaticField = &hx::Class_obj::GetNoStaticField;
+	__mClass->mGetStaticField = &Bytes_obj::__GetStatic;
 	__mClass->mSetStaticField = &hx::Class_obj::SetNoStaticField;
 	__mClass->mMarkFunc = Bytes_obj_sMarkStatics;
-	__mClass->mStatics = hx::Class_obj::dupFunctions(0 /* sStaticFields */);
-	__mClass->mMembers = hx::Class_obj::dupFunctions(0 /* sMemberFields */);
+	__mClass->mStatics = hx::Class_obj::dupFunctions(Bytes_obj_sStaticFields);
+	__mClass->mMembers = hx::Class_obj::dupFunctions(Bytes_obj_sMemberFields);
 	__mClass->mCanCast = hx::TCanCast< Bytes_obj >;
 #ifdef HXCPP_VISIT_ALLOCS
 	__mClass->mVisitFunc = Bytes_obj_sVisitStatics;

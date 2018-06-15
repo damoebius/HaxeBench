@@ -7,6 +7,7 @@
 #endif
 
 HX_DECLARE_CLASS1(hxcpp,Main)
+HX_DECLARE_CLASS1(hxcpp,ScreenPressor)
 
 namespace hxcpp{
 
@@ -46,10 +47,12 @@ class HXCPP_CLASS_ATTRIBUTES Main_obj : public hx::Object
 
 		HX_DO_RTTI_ALL;
 		static bool __GetStatic(const ::String &inString, Dynamic &outValue, hx::PropertyAccess inCallProp);
+		static bool __SetStatic(const ::String &inString, Dynamic &ioValue, hx::PropertyAccess inCallProp);
 		static void __register();
 		bool _hx_isInstanceOf(int inClassId);
 		::String __ToString() const { return HX_HCSTRING("Main","\x59","\x64","\x2f","\x33"); }
 
+		static  ::hxcpp::ScreenPressor ScreenPressor;
 		static void main();
 		static ::Dynamic main_dyn();
 

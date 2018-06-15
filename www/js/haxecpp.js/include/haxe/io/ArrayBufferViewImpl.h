@@ -7,6 +7,7 @@
 #endif
 
 HX_DECLARE_CLASS2(haxe,io,ArrayBufferViewImpl)
+HX_DECLARE_CLASS2(haxe,io,Bytes)
 
 namespace haxe{
 namespace io{
@@ -22,34 +23,31 @@ class HXCPP_CLASS_ATTRIBUTES ArrayBufferViewImpl_obj : public hx::Object
 	public:
 		enum { _hx_ClassId = 0x140c5e8a };
 
-		void __construct();
-		inline void *operator new(size_t inSize, bool inContainer=false,const char *inName="haxe.io.ArrayBufferViewImpl")
+		void __construct( ::haxe::io::Bytes bytes,int pos,int length);
+		inline void *operator new(size_t inSize, bool inContainer=true,const char *inName="haxe.io.ArrayBufferViewImpl")
 			{ return hx::Object::operator new(inSize,inContainer,inName); }
 		inline void *operator new(size_t inSize, int extra)
-			{ return hx::Object::operator new(inSize+extra,false,"haxe.io.ArrayBufferViewImpl"); }
-
-		hx::ObjectPtr< ArrayBufferViewImpl_obj > __new() {
-			hx::ObjectPtr< ArrayBufferViewImpl_obj > __this = new ArrayBufferViewImpl_obj();
-			__this->__construct();
-			return __this;
-		}
-
-		static hx::ObjectPtr< ArrayBufferViewImpl_obj > __alloc(hx::Ctx *_hx_ctx) {
-			ArrayBufferViewImpl_obj *__this = (ArrayBufferViewImpl_obj*)(hx::Ctx::alloc(_hx_ctx, sizeof(ArrayBufferViewImpl_obj), false, "haxe.io.ArrayBufferViewImpl"));
-			*(void **)__this = ArrayBufferViewImpl_obj::_hx_vtable;
-			return __this;
-		}
-
+			{ return hx::Object::operator new(inSize+extra,true,"haxe.io.ArrayBufferViewImpl"); }
+		static hx::ObjectPtr< ArrayBufferViewImpl_obj > __new( ::haxe::io::Bytes bytes,int pos,int length);
+		static hx::ObjectPtr< ArrayBufferViewImpl_obj > __alloc(hx::Ctx *_hx_ctx, ::haxe::io::Bytes bytes,int pos,int length);
 		static void * _hx_vtable;
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		//~ArrayBufferViewImpl_obj();
 
 		HX_DO_RTTI_ALL;
+		hx::Val __Field(const ::String &inString, hx::PropertyAccess inCallProp);
+		hx::Val __SetField(const ::String &inString,const hx::Val &inValue, hx::PropertyAccess inCallProp);
+		void __GetFields(Array< ::String> &outFields);
 		static void __register();
+		void __Mark(HX_MARK_PARAMS);
+		void __Visit(HX_VISIT_PARAMS);
 		bool _hx_isInstanceOf(int inClassId);
 		::String __ToString() const { return HX_HCSTRING("ArrayBufferViewImpl","\x5e","\xa0","\x91","\x73"); }
 
+		 ::haxe::io::Bytes bytes;
+		int byteOffset;
+		int byteLength;
 };
 
 } // end namespace haxe

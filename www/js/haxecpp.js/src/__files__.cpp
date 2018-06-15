@@ -5,25 +5,38 @@ namespace hx {
 const char *__hxcpp_all_files[] = {
 #ifdef HXCPP_DEBUGGER
 "/usr/share/haxe/std/cpp/_std/Std.hx",
+"/usr/share/haxe/std/haxe/Log.hx",
+"/usr/share/haxe/std/haxe/io/ArrayBufferView.hx",
+"/usr/share/haxe/std/haxe/io/Bytes.hx",
 "?",
 "hxcpp/Main.hx",
+"hxcpp/RangeCoder.hx",
+"hxcpp/ScreenPressor.hx",
 #endif
  0 };
 
 const char *__hxcpp_all_files_fullpath[] = {
 #ifdef HXCPP_DEBUGGER
 "/usr/share/haxe/std/cpp/_std/Std.hx",
+"/usr/share/haxe/std/haxe/Log.hx",
+"/usr/share/haxe/std/haxe/io/ArrayBufferView.hx",
+"/usr/share/haxe/std/haxe/io/Bytes.hx",
 "?",
 "/home/damo/Projects/HaxeBench/src/hxcpp/Main.hx",
+"/home/damo/Projects/HaxeBench/src/hxcpp/RangeCoder.hx",
+"/home/damo/Projects/HaxeBench/src/hxcpp/ScreenPressor.hx",
 #endif
  0 };
 
 const char *__hxcpp_all_classes[] = {
 #ifdef HXCPP_DEBUGGER
 "Std",
+"haxe.Log",
 "haxe.io.ArrayBufferViewImpl",
 "haxe.io.Bytes",
 "hxcpp.Main",
+"hxcpp.RangeCoder",
+"hxcpp.ScreenPressor",
 #endif
  0 };
 } // namespace hx
