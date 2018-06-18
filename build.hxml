@@ -10,7 +10,6 @@
 
 -cp src
 
--dce full
 --times
 
 -D EMSCRIPTEN_SDK

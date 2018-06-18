@@ -3,12 +3,18 @@
 <files id="haxe">
 <compilerflag value="-Iinclude"/>
   <file name="src/hxcpp/ScreenPressor.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/haxe/Log.h"/>
    <depend name="include/haxe/io/ArrayBufferViewImpl.h"/>
    <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/_UInt8Array/UInt8Array_Impl_.h"/>
    <depend name="include/hxcpp/RangeCoder.h"/>
    <depend name="include/hxcpp/ScreenPressor.h"/>
   </file>
   <file name="src/hxcpp/RangeCoder.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/haxe/io/ArrayBufferViewImpl.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
    <depend name="include/hxcpp/RangeCoder.h"/>
   </file>
   <file name="src/hxcpp/Main.cpp" >
@@ -16,8 +22,23 @@
    <depend name="include/hxcpp/Main.h"/>
    <depend name="include/hxcpp/ScreenPressor.h"/>
   </file>
+  <file name="src/haxe/io/_UInt8Array/UInt8Array_Impl_.cpp" >
+   <depend name="include/haxe/io/ArrayBufferViewImpl.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/_ArrayBufferView/ArrayBufferView_Impl_.h"/>
+   <depend name="include/haxe/io/_UInt8Array/UInt8Array_Impl_.h"/>
+  </file>
+  <file name="src/haxe/io/Error.cpp" >
+   <depend name="include/haxe/io/Error.h"/>
+  </file>
   <file name="src/haxe/io/Bytes.cpp" >
    <depend name="include/haxe/io/Bytes.h"/>
+  </file>
+  <file name="src/haxe/io/_ArrayBufferView/ArrayBufferView_Impl_.cpp" >
+   <depend name="include/haxe/io/ArrayBufferViewImpl.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/_ArrayBufferView/ArrayBufferView_Impl_.h"/>
   </file>
   <file name="src/haxe/io/ArrayBufferViewImpl.cpp" >
    <depend name="include/haxe/io/ArrayBufferViewImpl.h"/>
@@ -31,6 +52,10 @@
    <depend name="include/Std.h"/>
   </file>
   <file name="src/__boot__.cpp" >
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/hxcpp/ScreenPressor.h"/>
+   <depend name="include/hxcpp/RangeCoder.h"/>
+   <depend name="include/hxcpp/Main.h"/>
    <depend name="include/haxe/Log.h"/>
   </file>
   <file name="src/__files__.cpp" if='HXCPP_DEBUGGER'>
@@ -61,6 +86,7 @@
 <linker id='exe' exe='emcc'>
     <flag value='--bind' />
     <flag value='-s' />
+ <flag value='-O3' />
     <flag value='TOTAL_MEMORY=33554432' />
 	<flag value='-s' />
 	<flag value='WASM=1' />

@@ -104,8 +104,10 @@ class ScreenPressor
 		var off = -X - 1;
 		var ptype = 0;	
 		//var dstbytes = new UInt8Array( dst.buffer );
-		var dstbytes = cast ArrayBufferView.fromData(cast dst);
-		
+//		var dstbytes = ArrayBufferView.fromData(cast dst);
+
+var dstbytes:UInt8Array = UInt8Array.fromBytes( ArrayBufferView.fromData(cast dst).buffer );		
+
 		while(di < end) {
 			ptype = rc.DecodeVal(ptypetab[ptype], 6, SC_UNSTEP);
 			if (ptype==0) {

@@ -6,21 +6,21 @@ import hxcpp.ScreenPressor;
 <linker id='exe' exe='emcc'>
     <flag value='--bind' />
     <flag value='-s' />
+ <flag value='-O3' />
     <flag value='TOTAL_MEMORY=33554432' />
 	<flag value='-s' />
 	<flag value='WASM=1' />
 </linker>
 ")
 @:cppFileCode('
-#include "screencap.h"
 #include <emscripten/bind.h>
 using namespace emscripten;
 
 EMSCRIPTEN_BINDINGS(my_module) {
 
-  class_<ScreenPressor>("ScreenPressor")
+  class_<hxcpp::ScreenPressor>("ScreenPressor")
           .constructor<int, int>()
-          .function("DecompressFrame", &ScreenPressor::DecompressI)
+          .function("DecompressFrame", &hxcpp::ScreenPressor::DecompressI)
           ;
 
 }
