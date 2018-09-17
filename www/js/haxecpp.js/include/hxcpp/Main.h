@@ -6,6 +6,7 @@
 #include <hxcpp.h>
 #endif
 
+HX_DECLARE_CLASS2(haxe,io,ArrayBufferViewImpl)
 HX_DECLARE_CLASS1(hxcpp,Main)
 HX_DECLARE_CLASS1(hxcpp,ScreenPressor)
 
@@ -52,12 +53,12 @@ class HXCPP_CLASS_ATTRIBUTES Main_obj : public hx::Object
 		bool _hx_isInstanceOf(int inClassId);
 		::String __ToString() const { return HX_HCSTRING("Main","\x59","\x64","\x2f","\x33"); }
 
-		static void __boot();
-		static int X;
-		static int Y;
 		static  ::hxcpp::ScreenPressor SP;
 		static void main();
 		static ::Dynamic main_dyn();
+
+		static void DecompressI(int width,int height, ::haxe::io::ArrayBufferViewImpl src, ::haxe::io::ArrayBufferViewImpl dst);
+		static ::Dynamic DecompressI_dyn();
 
 };
 

@@ -8,6 +8,9 @@ import hxcpp.ScreenPressor;
         <flag value='-s' />
         <flag value='WASM=1' />
         <flag value='--bind' />
+	<flag value='-s' />
+²²²²<flag value='TOTAL_MEMORY=33554432' />
+	<flag value='-O3' />
 </linker>
 ")
 

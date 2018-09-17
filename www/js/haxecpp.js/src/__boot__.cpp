@@ -10,11 +10,11 @@
 #ifndef INCLUDED_hxcpp_RangeCoder
 #include <hxcpp/RangeCoder.h>
 #endif
-#ifndef INCLUDED_hxcpp_Main
-#include <hxcpp/Main.h>
-#endif
 #ifndef INCLUDED_haxe_Log
 #include <haxe/Log.h>
+#endif
+#ifndef INCLUDED_hxcpp_Main
+#include <hxcpp/Main.h>
 #endif
 #ifndef INCLUDED_haxe_io__UInt8Array_UInt8Array_Impl_
 #include <haxe/io/_UInt8Array/UInt8Array_Impl_.h>
@@ -41,8 +41,8 @@ hx::RegisterResources( hx::GetResources() );
 ::haxe::io::Error_obj::__register();
 ::hxcpp::ScreenPressor_obj::__register();
 ::hxcpp::RangeCoder_obj::__register();
-::hxcpp::Main_obj::__register();
 ::haxe::Log_obj::__register();
+::hxcpp::Main_obj::__register();
 ::haxe::io::_UInt8Array::UInt8Array_Impl__obj::__register();
 ::haxe::io::Bytes_obj::__register();
 ::haxe::io::_ArrayBufferView::ArrayBufferView_Impl__obj::__register();
@@ -50,7 +50,6 @@ hx::RegisterResources( hx::GetResources() );
 ::Std_obj::__register();
 ::haxe::io::Error_obj::__boot();
 ::haxe::Log_obj::__boot();
-::hxcpp::Main_obj::__boot();
 ::hxcpp::RangeCoder_obj::__boot();
 ::hxcpp::ScreenPressor_obj::__boot();
 }
