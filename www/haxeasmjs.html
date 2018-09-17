@@ -10,6 +10,7 @@ Number of times to decompress:
 </div>
 <p>
 <div id="main"></div>
+coucou
    <div class="spinner" id='spinner'></div>
     <div class="emscripten" id="status">Downloading...</div>
 
@@ -102,43 +103,22 @@ Number of times to decompress:
 		var btn = window.document.getElementById("btn");
 		btn.onclick = function(e) {
 			var bytes = new Uint8Array(buf,4);
-			//var sp = new ScreenPressor(960,540);
-			var inp;
-			inp = window.document.getElementById("N");
-			var N = parseInt(inp.value, 10);
-			if(N < 0 || N > 1000) {
-				txt.innerHTML = "You must be joking!";
-				return;
-			}
-			txt.innerHTML = "Decompressing " + N + " times...";
-      var m = window.document.getElementById("main");
-      while(m.lastChild != null) m.removeChild(m.lastChild);
-
-			var timer_id = setInterval(function() {
-        clearInterval(timer_id);
-				//var t0 = new Date().getTime();
-				/*var _g = 0;
-				while(_g < N) {
-					var n = _g++;
-					sp.DecompressI(bytes,dst);
-				}
-				var t1 = haxe.Timer.stamp();*/
-        var pSrc = Module._malloc(bytes.length);
-        var pDst = Module._malloc(X*Y*3);
-        
-        //Module.writeArrayToMemory(bytes, pSrc);
-        Module.HEAP8.set(bytes, pSrc);
-        var sp = new Module.ScreenPressor(X, Y);
-        var t0 = new Date().getTime();
-        
-        var n = 0;
-        while(n++ < N)
-          sp.DecompressFrame(pSrc, pDst);
-        
-        var t1 = new Date().getTime();
-				txt.innerHTML += " t=" + (t1-t0);
-				
-        var c;
+			var dst = new Int32Array(518400);
+			var inp = document.getElementById("N");
+      var N = parseInt(inp.value);
+      if (N < 0 || N > 1000) {
+          txt.innerHTML = "You must be joking!";
+          return;
+      }
+      txt.innerHTML = "Decompressing " + N + " times...";
+      setTimeout(function () {
+          var t0 = Date.now();
+          for (var n = 0; n < N; n++) {
+            Module.MyWrapper.decompress(X,Y,bytes, dst);
+          }
+          var t1 = Date.now();
+          txt.innerHTML += " t=" + (t1 - t0);
+          var c;
         var _this = window.document;
         c = _this.createElement("canvas");
         c.width = X;
@@ -146,7 +126,7 @@ Number of times to decompress:
         m.appendChild(c);
         var imagedata = c.getContext("2d").getImageData(0,0,X,Y);
         var data = imagedata.data;
-        var picbytes = Module.HEAPU8.subarray(pDst, pDst+X*Y*3);
+        var picbytes = Module.HEAPU8.subarray(dst, dst+X*Y*3);
         var _g1 = 0;
         while(_g1 < 518400) {
           var i = _g1++;
@@ -156,10 +136,9 @@ Number of times to decompress:
           data[i * 4 + 3] = 255;
         }
         c.getContext("2d").putImageData(imagedata,0,0);        
-        Module._free(pDst);
-        Module._free(pSrc);
-        sp.delete();
-			},20);
+        Module._free(dst);
+        Module._free(bytes);
+      }, 20);
 		};
 	};
 	r.open("GET","blow.spi",true);
