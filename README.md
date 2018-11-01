@@ -1,7 +1,7 @@
 # HaxeBench
 Haxe, Dart, Typescript, and Webassembly, javascript output performances comparison.
 
-An updated comparison from http://www.infognition.com/blog/2014/comparing_flash_haxe_dart_asmjs_and_cpp.html
+An updated comparison from https://web.archive.org/web/20171104160438/http://www.infognition.com/blog/2014/comparing_flash_haxe_dart_asmjs_and_cpp.html
 
 - Haxe : 3.4.7
 - TypeScript : 2.8
