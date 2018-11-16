@@ -1,3 +1,4 @@
+"use strict";
 var RangeCoder = (function () {
     function RangeCoder() {
     }
@@ -85,7 +86,7 @@ var RangeCoder = (function () {
         totfr += step;
         if (totfr > RangeCoder.BOT) {
             totfr = 0;
-            for (var i = (off + 17); i < (off + 256 + 17); i++) {
+            for (var i = (off + 17), len = (off + 256 + 17); i < len; i++) {
                 var nc = (cnt[i] >> 1) + 1;
                 cnt[i] = nc;
                 totfr += nc;
@@ -93,8 +94,9 @@ var RangeCoder = (function () {
             for (var i = 0; i < 16; i++) {
                 var sum = 0;
                 var i16_17 = off + (i << 4) + 17;
-                for (var j = 0; j < 16; j++)
+                for (var j = 0; j < 16; j++) {
                     sum += cnt[i16_17 + j];
+                }
                 cnt[off + i] = sum;
             }
         }
@@ -118,14 +120,14 @@ var ScreenPressor = (function () {
             this.ntab[i] = new Uint32Array(257);
         }
         for (var chan = 0; chan < 3; chan++) {
-            for (var ctx = 0; ctx < ScreenPressor.SC_CXMAX; ctx++) {
+            for (var ctx = 0, len = ScreenPressor.SC_CXMAX; ctx < len; ctx++) {
                 this.cntab[((chan << 12) + ctx) * ScreenPressor.CNTABSZ + 16] = 0;
             }
         }
     }
     ScreenPressor.prototype.ReinitTabs = function () {
         for (var chan = 0; chan < 3; chan++) {
-            for (var ctx = 0; ctx < ScreenPressor.SC_CXMAX; ctx++) {
+            for (var ctx = 0, len = ScreenPressor.SC_CXMAX; ctx < len; ctx++) {
                 var p = ((chan << 12) + ctx) * ScreenPressor.CNTABSZ;
                 if (this.cntab[p + 16] != 256) {
                     for (var i = 0; i < 256; i++) {
@@ -138,7 +140,7 @@ var ScreenPressor = (function () {
                 }
             }
         }
-        for (var ncx = 0; ncx < ScreenPressor.SC_NCXMAX; ncx++) {
+        for (var ncx = 0, len = ScreenPressor.SC_NCXMAX; ncx < len; ncx++) {
             var p2 = this.ntab[ncx];
             for (var i = 0; i < 256; i++) {
                 p2[i] = 1;
@@ -164,17 +166,17 @@ var ScreenPressor = (function () {
         this.rc.DecodeBegin(src, 1);
         var k = 0;
         while (k < this.X + 1) {
-            var r = this.rc.DecodeValUni(this.cntab, (cx + cx1) * ScreenPressor.CNTABSZ, ScreenPressor.SC_STEP);
+            var r_1 = this.rc.DecodeValUni(this.cntab, (cx + cx1) * ScreenPressor.CNTABSZ, ScreenPressor.SC_STEP);
             cx1 = (cx << 6) & 0xFC0;
-            cx = r >> ScreenPressor.SC_CXSHIFT;
-            var g = this.rc.DecodeValUni(this.cntab, (4096 + cx + cx1) * ScreenPressor.CNTABSZ, ScreenPressor.SC_STEP);
+            cx = r_1 >> ScreenPressor.SC_CXSHIFT;
+            var g_1 = this.rc.DecodeValUni(this.cntab, (4096 + cx + cx1) * ScreenPressor.CNTABSZ, ScreenPressor.SC_STEP);
             cx1 = (cx << 6) & 0xFC0;
-            cx = g >> ScreenPressor.SC_CXSHIFT;
-            var b = this.rc.DecodeValUni(this.cntab, (2 * 4096 + cx + cx1) * ScreenPressor.CNTABSZ, ScreenPressor.SC_STEP);
+            cx = g_1 >> ScreenPressor.SC_CXSHIFT;
+            var b_1 = this.rc.DecodeValUni(this.cntab, (2 * 4096 + cx + cx1) * ScreenPressor.CNTABSZ, ScreenPressor.SC_STEP);
             cx1 = (cx << 6) & 0xFC0;
-            cx = b >> ScreenPressor.SC_CXSHIFT;
+            cx = b_1 >> ScreenPressor.SC_CXSHIFT;
             var n = this.rc.DecodeVal(this.ntab[0], 256, ScreenPressor.SC_NSTEP);
-            clr = (b << 16) + (g << 8) + r;
+            clr = (b_1 << 16) + (g_1 << 8) + r_1;
             k += n;
             while (n-- > 0) {
                 dst[di] = clr;
@@ -184,20 +186,20 @@ var ScreenPressor = (function () {
         }
         var off = -this.X - 1;
         var ptype = 0;
-        var dstbytes = new Uint8Array(dst.buffer);
+        var dstbytes = new Uint8ClampedArray(dst.buffer);
         while (di < end) {
             ptype = this.rc.DecodeVal(this.ptypetab[ptype], 6, ScreenPressor.SC_UNSTEP);
             if (ptype == 0) {
-                var r = this.rc.DecodeValUni(this.cntab, (cx + cx1) * ScreenPressor.CNTABSZ, ScreenPressor.SC_STEP);
+                var r_2 = this.rc.DecodeValUni(this.cntab, (cx + cx1) * ScreenPressor.CNTABSZ, ScreenPressor.SC_STEP);
                 cx1 = (cx << 6) & 0xFC0;
-                cx = r >> ScreenPressor.SC_CXSHIFT;
-                var g = this.rc.DecodeValUni(this.cntab, (4096 + cx + cx1) * ScreenPressor.CNTABSZ, ScreenPressor.SC_STEP);
+                cx = r_2 >> ScreenPressor.SC_CXSHIFT;
+                var g_2 = this.rc.DecodeValUni(this.cntab, (4096 + cx + cx1) * ScreenPressor.CNTABSZ, ScreenPressor.SC_STEP);
                 cx1 = (cx << 6) & 0xFC0;
-                cx = g >> ScreenPressor.SC_CXSHIFT;
-                var b = this.rc.DecodeValUni(this.cntab, (2 * 4096 + cx + cx1) * ScreenPressor.CNTABSZ, ScreenPressor.SC_STEP);
+                cx = g_2 >> ScreenPressor.SC_CXSHIFT;
+                var b_2 = this.rc.DecodeValUni(this.cntab, (2 * 4096 + cx + cx1) * ScreenPressor.CNTABSZ, ScreenPressor.SC_STEP);
                 cx1 = (cx << 6) & 0xFC0;
-                cx = b >> ScreenPressor.SC_CXSHIFT;
-                clr = (b << 16) + (g << 8) + r;
+                cx = b_2 >> ScreenPressor.SC_CXSHIFT;
+                clr = (b_2 << 16) + (g_2 << 8) + r_2;
             }
             var n = this.rc.DecodeVal(this.ntab[ptype], 256, ScreenPressor.SC_NSTEP);
             switch (ptype) {
@@ -222,7 +224,7 @@ var ScreenPressor = (function () {
                     lasti = di - 1;
                 case 4:
                     while (n-- > 0) {
-                        var r = dstbytes[lasti * 4] + dstbytes[(di + off) * 4 + 4] - dstbytes[(di + off) * 4];
+                        var r = dstbytes[lasti * 4 + 0] + dstbytes[(di + off) * 4 + 4] - dstbytes[(di + off) * 4 + 0];
                         var g = dstbytes[lasti * 4 + 1] + dstbytes[(di + off) * 4 + 5] - dstbytes[(di + off) * 4 + 1];
                         var b = dstbytes[lasti * 4 + 2] + dstbytes[(di + off) * 4 + 6] - dstbytes[(di + off) * 4 + 2];
                         clr = ((b & 0xFF) << 16) + ((g & 0xFF) << 8) + (r & 0xFF);
@@ -258,11 +260,11 @@ var Main = (function () {
         var txt = document.getElementById("txt");
         txt.innerHTML = "sss";
         var r = new XMLHttpRequest();
-        r.onload = function (x) {
+        r.onload = function (_) {
             var buf = r.response;
             txt.innerHTML = "received " + buf.byteLength;
             var btn = document.getElementById("btn");
-            btn.onclick = function (e) {
+            btn.onclick = function (_) {
                 var bytes = new Uint8Array(buf, 4);
                 var sp = new ScreenPressor(Main.X, Main.Y);
                 var dst = new Int32Array(Main.X * Main.Y);
@@ -274,7 +276,7 @@ var Main = (function () {
                 }
                 txt.innerHTML = "Decompressing " + N + " times...";
                 Main.clearImg();
-                setTimeout(function () {
+                setTimeout(function (_) {
                     console.log("sssss");
                     var t0 = Date.now();
                     for (var n = 0; n < N; n++) {
@@ -292,18 +294,19 @@ var Main = (function () {
     };
     Main.clearImg = function () {
         var m = document.getElementById("main");
-        while (m.lastChild != null)
+        while (m.lastChild)
             m.removeChild(m.lastChild);
     };
     Main.showImg = function (pic) {
         var m = document.getElementById("main");
         var c = document.createElement("canvas");
+        var ctx = c.getContext("2d");
         c.width = Main.X;
         c.height = Main.Y;
         m.appendChild(c);
-        var imagedata = c.getContext("2d").getImageData(0, 0, Main.X, Main.Y);
+        var imagedata = ctx.getImageData(0, 0, Main.X, Main.Y);
         var data = imagedata.data;
-        var picbytes = new Uint8Array(pic.buffer);
+        var picbytes = new Uint8ClampedArray(pic.buffer);
         var l = Main.X * Main.Y;
         for (var i = 0; i < l; i++) {
             data[i * 4 + 0] = picbytes[i * 4 + 0];
@@ -311,7 +314,7 @@ var Main = (function () {
             data[i * 4 + 2] = picbytes[i * 4 + 2];
             data[i * 4 + 3] = 255;
         }
-        c.getContext("2d").putImageData(imagedata, 0, 0);
+        ctx.putImageData(imagedata, 0, 0);
     };
     Main.X = 960;
     Main.Y = 540;
