@@ -5,13 +5,13 @@
 #include <haxe/io/Bytes.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_bafb5aba549b371d_33_new,"haxe.io.Bytes","new",0x3938d57d,"haxe.io.Bytes.new","/usr/share/haxe/std/haxe/io/Bytes.hx",33,0xb829beee)
-HX_LOCAL_STACK_FRAME(_hx_pos_bafb5aba549b371d_462_alloc,"haxe.io.Bytes","alloc",0x2199ead2,"haxe.io.Bytes.alloc","/usr/share/haxe/std/haxe/io/Bytes.hx",462,0xb829beee)
+HX_DEFINE_STACK_FRAME(_hx_pos_8a9a9286338c842d_33_new,"haxe.io.Bytes","new",0x3938d57d,"haxe.io.Bytes.new","C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std/haxe/io/Bytes.hx",33,0xa5cb51af)
+HX_LOCAL_STACK_FRAME(_hx_pos_8a9a9286338c842d_462_alloc,"haxe.io.Bytes","alloc",0x2199ead2,"haxe.io.Bytes.alloc","C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std/haxe/io/Bytes.hx",462,0xa5cb51af)
 namespace haxe{
 namespace io{
 
 void Bytes_obj::__construct(int length,::Array< unsigned char > b){
-            	HX_STACKFRAME(&_hx_pos_bafb5aba549b371d_33_new)
+            	HX_STACKFRAME(&_hx_pos_8a9a9286338c842d_33_new)
 HXLINE(  34)		this->length = length;
 HXLINE(  35)		this->b = b;
             	}
@@ -32,7 +32,7 @@ bool Bytes_obj::_hx_isInstanceOf(int inClassId) {
 }
 
  ::haxe::io::Bytes Bytes_obj::alloc(int length){
-            	HX_GC_STACKFRAME(&_hx_pos_bafb5aba549b371d_462_alloc)
+            	HX_GC_STACKFRAME(&_hx_pos_8a9a9286338c842d_462_alloc)
 HXLINE( 472)		::Array< unsigned char > a = ::Array_obj< unsigned char >::__new();
 HXLINE( 473)		if ((length > (int)0)) {
 HXLINE( 473)			_hx_array_set_size_exact(a,length);

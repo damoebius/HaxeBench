@@ -8,12 +8,12 @@
 #include <haxe/io/Bytes.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_5b4b8202bc3751cd_30_new,"haxe.io.ArrayBufferViewImpl","new",0x853f5310,"haxe.io.ArrayBufferViewImpl.new","/usr/share/haxe/std/haxe/io/ArrayBufferView.hx",30,0x41f0467b)
+HX_DEFINE_STACK_FRAME(_hx_pos_bab9d50fd0bf3b96_30_new,"haxe.io.ArrayBufferViewImpl","new",0x853f5310,"haxe.io.ArrayBufferViewImpl.new","C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std/haxe/io/ArrayBufferView.hx",30,0xe3ab347c)
 namespace haxe{
 namespace io{
 
 void ArrayBufferViewImpl_obj::__construct( ::haxe::io::Bytes bytes,int pos,int length){
-            	HX_STACKFRAME(&_hx_pos_5b4b8202bc3751cd_30_new)
+            	HX_STACKFRAME(&_hx_pos_bab9d50fd0bf3b96_30_new)
 HXLINE(  31)		this->bytes = bytes;
 HXLINE(  32)		this->byteOffset = pos;
 HXLINE(  33)		this->byteLength = length;

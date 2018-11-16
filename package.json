@@ -9,15 +9,15 @@
     "build": "npm run build:haxe && npm run build:ts",
     "build:haxe": "haxe build.hxml && node deployhaxe.js",
     "build:ts": "tsc --diagnostics",
-    "build:dart": "dart2js --no-source-maps -v -o www/js/dart.js src/dart/spi.dart",
+    "build:dart": "dart2js -O4 --no-source-maps -v -o www/js/dart.js src/dart/spi.dart",
     "postinstall": "haxelib install all --always"
   },
   "dependencies": {
     "haxe": "5.0.9",
-    "typescript": "2.8.3"
+    "typescript": "^3.1.6"
   },
   "haxeDependencies": {
-    "haxe": "3.4.7",
+    "haxe": "4.0.0-preview.5",
     "haxelib": "3.3.0",
     "neko": "2.2.0"
   },

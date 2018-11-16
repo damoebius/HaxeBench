@@ -4,12 +4,12 @@
 namespace hx {
 const char *__hxcpp_all_files[] = {
 #ifdef HXCPP_DEBUGGER
-"/usr/share/haxe/std/cpp/_std/Std.hx",
-"/usr/share/haxe/std/haxe/Log.hx",
-"/usr/share/haxe/std/haxe/io/ArrayBufferView.hx",
-"/usr/share/haxe/std/haxe/io/Bytes.hx",
-"/usr/share/haxe/std/haxe/io/UInt8Array.hx",
 "?",
+"C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std/cpp/_std/Std.hx",
+"C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std/haxe/Log.hx",
+"C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std/haxe/io/ArrayBufferView.hx",
+"C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std/haxe/io/Bytes.hx",
+"C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std/haxe/io/UInt8Array.hx",
 "hxcpp/Main.hx",
 "hxcpp/RangeCoder.hx",
 "hxcpp/ScreenPressor.hx",
@@ -18,15 +18,15 @@ const char *__hxcpp_all_files[] = {
 
 const char *__hxcpp_all_files_fullpath[] = {
 #ifdef HXCPP_DEBUGGER
-"/usr/share/haxe/std/cpp/_std/Std.hx",
-"/usr/share/haxe/std/haxe/Log.hx",
-"/usr/share/haxe/std/haxe/io/ArrayBufferView.hx",
-"/usr/share/haxe/std/haxe/io/Bytes.hx",
-"/usr/share/haxe/std/haxe/io/UInt8Array.hx",
-"?",
-"/home/tamina/projects/HaxeBench/src/hxcpp/Main.hx",
-"/home/tamina/projects/HaxeBench/src/hxcpp/RangeCoder.hx",
-"/home/tamina/projects/HaxeBench/src/hxcpp/ScreenPressor.hx",
+"C:\\Users\\MOUTON\\Projects\\HaxeBench\\?",
+"C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std\\cpp\\_std\\Std.hx",
+"C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std\\haxe\\Log.hx",
+"C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std\\haxe\\io\\ArrayBufferView.hx",
+"C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std\\haxe\\io\\Bytes.hx",
+"C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std\\haxe\\io\\UInt8Array.hx",
+"C:\\Users\\MOUTON\\Projects\\HaxeBench\\src\\hxcpp\\Main.hx",
+"C:\\Users\\MOUTON\\Projects\\HaxeBench\\src\\hxcpp\\RangeCoder.hx",
+"C:\\Users\\MOUTON\\Projects\\HaxeBench\\src\\hxcpp\\ScreenPressor.hx",
 #endif
  0 };
 

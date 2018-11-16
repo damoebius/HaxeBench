@@ -5,13 +5,13 @@
 #include <Std.h>
 #endif
 
-HX_LOCAL_STACK_FRAME(_hx_pos_10265659e446e554_24_is,"Std","is",0x3c56d6f5,"Std.is","/usr/share/haxe/std/cpp/_std/Std.hx",24,0x63298cdf)
-HX_LOCAL_STACK_FRAME(_hx_pos_10265659e446e554_28_instance,"Std","instance",0x1431f4e0,"Std.instance","/usr/share/haxe/std/cpp/_std/Std.hx",28,0x63298cdf)
-HX_LOCAL_STACK_FRAME(_hx_pos_10265659e446e554_32_string,"Std","string",0xcf48855c,"Std.string","/usr/share/haxe/std/cpp/_std/Std.hx",32,0x63298cdf)
-HX_LOCAL_STACK_FRAME(_hx_pos_10265659e446e554_36_int,"Std","int",0x8fa53b84,"Std.int","/usr/share/haxe/std/cpp/_std/Std.hx",36,0x63298cdf)
-HX_LOCAL_STACK_FRAME(_hx_pos_10265659e446e554_40_parseInt,"Std","parseInt",0x90c2ebc7,"Std.parseInt","/usr/share/haxe/std/cpp/_std/Std.hx",40,0x63298cdf)
-HX_LOCAL_STACK_FRAME(_hx_pos_10265659e446e554_44_parseFloat,"Std","parseFloat",0xbca10a74,"Std.parseFloat","/usr/share/haxe/std/cpp/_std/Std.hx",44,0x63298cdf)
-HX_LOCAL_STACK_FRAME(_hx_pos_10265659e446e554_47_random,"Std","random",0x75a77e8e,"Std.random","/usr/share/haxe/std/cpp/_std/Std.hx",47,0x63298cdf)
+HX_LOCAL_STACK_FRAME(_hx_pos_c2cc148190e03f8b_24_is,"Std","is",0x3c56d6f5,"Std.is","C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std/cpp/_std/Std.hx",24,0xb3704d3e)
+HX_LOCAL_STACK_FRAME(_hx_pos_c2cc148190e03f8b_28_instance,"Std","instance",0x1431f4e0,"Std.instance","C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std/cpp/_std/Std.hx",28,0xb3704d3e)
+HX_LOCAL_STACK_FRAME(_hx_pos_c2cc148190e03f8b_32_string,"Std","string",0xcf48855c,"Std.string","C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std/cpp/_std/Std.hx",32,0xb3704d3e)
+HX_LOCAL_STACK_FRAME(_hx_pos_c2cc148190e03f8b_36_int,"Std","int",0x8fa53b84,"Std.int","C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std/cpp/_std/Std.hx",36,0xb3704d3e)
+HX_LOCAL_STACK_FRAME(_hx_pos_c2cc148190e03f8b_40_parseInt,"Std","parseInt",0x90c2ebc7,"Std.parseInt","C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std/cpp/_std/Std.hx",40,0xb3704d3e)
+HX_LOCAL_STACK_FRAME(_hx_pos_c2cc148190e03f8b_44_parseFloat,"Std","parseFloat",0xbca10a74,"Std.parseFloat","C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std/cpp/_std/Std.hx",44,0xb3704d3e)
+HX_LOCAL_STACK_FRAME(_hx_pos_c2cc148190e03f8b_47_random,"Std","random",0x75a77e8e,"Std.random","C:\\Users\\MOUTON\\Projects\\HaxeBench\\node_modules\\haxe\\downloads\\haxe\\std/cpp/_std/Std.hx",47,0xb3704d3e)
 
 void Std_obj::__construct() { }
 
@@ -31,7 +31,7 @@ bool Std_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 bool Std_obj::is( ::Dynamic v, ::Dynamic t){
-            	HX_STACKFRAME(&_hx_pos_10265659e446e554_24_is)
+            	HX_STACKFRAME(&_hx_pos_c2cc148190e03f8b_24_is)
 HXDLIN(  24)		return ::__instanceof(v,t);
             	}
 
@@ -39,7 +39,7 @@ HXDLIN(  24)		return ::__instanceof(v,t);
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(Std_obj,is,return )
 
  ::Dynamic Std_obj::instance( ::Dynamic value,hx::Class c){
-            	HX_STACKFRAME(&_hx_pos_10265659e446e554_28_instance)
+            	HX_STACKFRAME(&_hx_pos_c2cc148190e03f8b_28_instance)
 HXDLIN(  28)		if (::Std_obj::is(value,c)) {
 HXDLIN(  28)			return value;
             		}
@@ -53,7 +53,7 @@ HXDLIN(  28)		return null();
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(Std_obj,instance,return )
 
 ::String Std_obj::string( ::Dynamic s){
-            	HX_STACKFRAME(&_hx_pos_10265659e446e554_32_string)
+            	HX_STACKFRAME(&_hx_pos_c2cc148190e03f8b_32_string)
 HXDLIN(  32)		if (hx::IsNull( s )) {
 HXDLIN(  32)			return HX_("null",87,9e,0e,49);
             		}
@@ -67,7 +67,7 @@ HXDLIN(  32)		return null();
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(Std_obj,string,return )
 
 int Std_obj::_hx_int(Float x){
-            	HX_STACKFRAME(&_hx_pos_10265659e446e554_36_int)
+            	HX_STACKFRAME(&_hx_pos_c2cc148190e03f8b_36_int)
 HXDLIN(  36)		return ::__int__(x);
             	}
 
@@ -75,7 +75,7 @@ HXDLIN(  36)		return ::__int__(x);
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(Std_obj,_hx_int,return )
 
  ::Dynamic Std_obj::parseInt(::String x){
-            	HX_STACKFRAME(&_hx_pos_10265659e446e554_40_parseInt)
+            	HX_STACKFRAME(&_hx_pos_c2cc148190e03f8b_40_parseInt)
 HXDLIN(  40)		return ::__hxcpp_parse_int(x);
             	}
 
@@ -83,7 +83,7 @@ HXDLIN(  40)		return ::__hxcpp_parse_int(x);
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(Std_obj,parseInt,return )
 
 Float Std_obj::parseFloat(::String x){
-            	HX_STACKFRAME(&_hx_pos_10265659e446e554_44_parseFloat)
+            	HX_STACKFRAME(&_hx_pos_c2cc148190e03f8b_44_parseFloat)
 HXDLIN(  44)		return ::__hxcpp_parse_float(x);
             	}
 
@@ -91,7 +91,7 @@ HXDLIN(  44)		return ::__hxcpp_parse_float(x);
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(Std_obj,parseFloat,return )
 
 int Std_obj::random(int x){
-            	HX_STACKFRAME(&_hx_pos_10265659e446e554_47_random)
+            	HX_STACKFRAME(&_hx_pos_c2cc148190e03f8b_47_random)
 HXLINE(  48)		if ((x <= (int)0)) {
 HXLINE(  48)			return (int)0;
             		}

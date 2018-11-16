@@ -6,7 +6,7 @@
 #include <hxcpp.h>
 #endif
 
-HX_DECLARE_STACK_FRAME(_hx_pos_bafb5aba549b371d_33_new)
+HX_DECLARE_STACK_FRAME(_hx_pos_8a9a9286338c842d_33_new)
 HX_DECLARE_CLASS2(haxe,io,Bytes)
 
 namespace haxe{
@@ -39,7 +39,7 @@ class HXCPP_CLASS_ATTRIBUTES Bytes_obj : public hx::Object
 			Bytes_obj *__this = (Bytes_obj*)(hx::Ctx::alloc(_hx_ctx, sizeof(Bytes_obj), true, "haxe.io.Bytes"));
 			*(void **)__this = Bytes_obj::_hx_vtable;
 {
-            	HX_STACKFRAME(&_hx_pos_bafb5aba549b371d_33_new)
+            	HX_STACKFRAME(&_hx_pos_8a9a9286338c842d_33_new)
 HXLINE(  34)		( ( ::haxe::io::Bytes)(__this) )->length = length;
 HXLINE(  35)		( ( ::haxe::io::Bytes)(__this) )->b = b;
             	}

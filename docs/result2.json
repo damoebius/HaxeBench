@@ -1,0 +1,88 @@
+{
+  "type": "serial",
+  "categoryField": "category",
+  "autoMarginOffset": 40,
+  "marginRight": 70,
+  "marginTop": 70,
+  "startDuration": 1,
+  "fontSize": 13,
+  "theme": "light",
+  "categoryAxis": {
+    "gridPosition": "start"
+  },
+  "trendLines": [],
+  "graphs": [
+    {
+      "balloonText": "[[title]] of [[category]]:[[value]]",
+      "fillAlphas": 0.9,
+      "id": "AmGraph-1",
+      "title": "graph 1",
+      "type": "column",
+      "valueField": "typescript"
+    },
+    {
+      "balloonText": "[[title]] of [[category]]:[[value]]",
+      "fillAlphas": 0.9,
+      "id": "AmGraph-2",
+      "title": "graph 2",
+      "type": "column",
+      "valueField": "haxe"
+    },
+    {
+      "balloonText": "[[title]] of [[category]]:[[value]]",
+      "fillAlphas": 0.9,
+      "id": "AmGraph-3",
+      "title": "graph 3",
+      "type": "column",
+      "valueField": "dart"
+    },
+    {
+      "balloonText": "[[title]] of [[category]]:[[value]]",
+      "fillAlphas": 0.9,
+      "id": "AmGraph-5",
+      "title": "wasm",
+      "type": "column",
+      "valueField": "wasm"
+    }
+  ],
+  "guides": [],
+  "valueAxes": [
+    {
+      "id": "ValueAxis-1",
+      "title": ""
+    }
+  ],
+  "allLabels": [],
+  "balloon": {},
+  "titles": [],
+  "dataProvider": [
+    {
+      "category": "compilation time",
+      "typescript": "1.89",
+      "haxe": "0.22",
+      "dart": "5.38",
+      "wasm": "8.74"
+    },
+    {
+      "category": "chrome run time",
+      "typescript": "8.94",
+      "haxe": "6.76",
+      "dart": "9.137",
+      "wasm": "6.8"
+    },
+    {
+      "category": "firefox run time",
+      "typescript": "8.6",
+      "haxe": "8.15",
+      "dart": "8.8",
+      "wasm": "5.93"
+    },
+    {
+      "category": "size",
+      "typescript": "0.12",
+      "haxe": "0.27",
+      "dart": "3.44",
+      "wasm": "0.82"
+    }
+  ]
+}
