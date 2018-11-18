@@ -37,8 +37,8 @@ class RangeCoder
 
  	get_freq(total_freq : number) : number
 	{
-		this.range = Math.floor(this.range / total_freq);
-		return Math.floor(this.code / this.range);
+		this.range = (this.range / total_freq) >>> 0;
+		return (this.code / this.range) >>> 0;
 	}
 
 	DecodeVal(cnt : Uint32Array, maxc : number, step : number) : number
@@ -89,7 +89,7 @@ class RangeCoder
 			x++;
 		}
 
-		let c = x * 16;
+		let c = x << 4;
 		let cnt_c = 0;
 		while (c < 256) {
 			cnt_c = cnt[off + c + 17];

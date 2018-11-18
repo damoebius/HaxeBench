@@ -25,8 +25,8 @@ var RangeCoder = (function () {
         }
     };
     RangeCoder.prototype.get_freq = function (total_freq) {
-        this.range = Math.floor(this.range / total_freq);
-        return Math.floor(this.code / this.range);
+        this.range = (this.range / total_freq) >>> 0;
+        return (this.code / this.range) >>> 0;
     };
     RangeCoder.prototype.DecodeVal = function (cnt, maxc, step) {
         var totfr = cnt[maxc];
@@ -70,7 +70,7 @@ var RangeCoder = (function () {
                 break;
             x++;
         }
-        var c = x * 16;
+        var c = x << 4;
         var cnt_c = 0;
         while (c < 256) {
             cnt_c = cnt[off + c + 17];
@@ -189,7 +189,7 @@ var ScreenPressor = (function () {
         var dstbytes = new Uint8ClampedArray(dst.buffer);
         while (di < end) {
             ptype = this.rc.DecodeVal(this.ptypetab[ptype], 6, ScreenPressor.SC_UNSTEP);
-            if (ptype == 0) {
+            if (ptype === 0) {
                 var r_2 = this.rc.DecodeValUni(this.cntab, (cx + cx1) * ScreenPressor.CNTABSZ, ScreenPressor.SC_STEP);
                 cx1 = (cx << 6) & 0xFC0;
                 cx = r_2 >> ScreenPressor.SC_CXSHIFT;

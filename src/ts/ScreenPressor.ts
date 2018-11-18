@@ -109,7 +109,7 @@ class ScreenPressor
 
 		while(di < end) {
 			ptype = this.rc.DecodeVal(this.ptypetab[ptype], 6, ScreenPressor.SC_UNSTEP);
-			if (ptype==0) {
+			if (ptype===0) {
 				let r = this.rc.DecodeValUni(this.cntab, (cx+cx1)*ScreenPressor.CNTABSZ, ScreenPressor.SC_STEP);
 				cx1 = (cx<<6)&0xFC0;
 				cx = r >> ScreenPressor.SC_CXSHIFT;
