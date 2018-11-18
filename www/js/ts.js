@@ -258,7 +258,6 @@ var Main = (function () {
     }
     Main.main = function () {
         var txt = document.getElementById("txt");
-        txt.innerHTML = "sss";
         var r = new XMLHttpRequest();
         r.onload = function (_) {
             var buf = r.response;
@@ -277,13 +276,12 @@ var Main = (function () {
                 txt.innerHTML = "Decompressing " + N + " times...";
                 Main.clearImg();
                 setTimeout(function (_) {
-                    console.log("sssss");
-                    var t0 = Date.now();
+                    var start = performance.now();
                     for (var n = 0; n < N; n++) {
                         sp.DecompressI(bytes, dst);
                     }
-                    var t1 = Date.now();
-                    txt.innerHTML += " t=" + (t1 - t0);
+                    var duration = performance.now() - start;
+                    txt.innerHTML += " t=" + duration + "ms";
                     Main.showImg(dst);
                 }, 20);
             };
