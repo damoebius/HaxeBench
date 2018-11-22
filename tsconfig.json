@@ -3,6 +3,8 @@
     "target": "ES5",
     "removeComments": true,
     "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "alwaysStrict": true,
     "outFile": "./www/js/ts.js",
     "rootDir": "./src/",
     "sourceMap": false
