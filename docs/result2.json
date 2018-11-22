@@ -58,7 +58,7 @@
   "dataProvider": [
     {
       "category": "compilation time",
-      "typescript": "1.89",
+      "typescript": "2.79",
       "haxe": "0.22",
       "dart": "5.38",
       "wasm": "8.74"

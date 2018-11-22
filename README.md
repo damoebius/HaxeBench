@@ -27,7 +27,7 @@ On Chrome 70 and Firefox 63, i5-5300U CPU @ 2.30GHz, 200 passes
 | lang  | compilation time | chrome run time | firefox run time | size | minified size |
 | ------------- | ------------- |------------- |------------- |------------- |------------- |
 | Haxe  | 0.22s  | 6.76s  | 8.15s | 27KB*  | 13KB  |
-| TypeScript | 1.89s  | 7.86s  | 8.6s | 12KB  | 7KB |
+| TypeScript | 2.79s  | 7.86s  | 8.46s | 12KB  | 7KB |
 | Dart  | 5.38s  | 9.137s  | 8.8s |98KB  | 89KB |
 | Wasm  | 8.74s  | 6.8s  | 5.93s | 82KB**  | 69KB |
 
